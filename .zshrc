@@ -1,0 +1,1 @@
+/Users/andyfang/dotfiles/zshrc

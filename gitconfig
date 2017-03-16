@@ -1,0 +1,46 @@
+[init]
+  templatedir = ~/.git_template
+[push]
+  default = current
+[color]
+	ui = auto
+[alias]
+  aa = add --all
+  a = add 
+  ap = add --patch
+  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+  ci = commit -v
+  cm = commit -m
+  cam = commit --amend
+  co = checkout
+  fp = push --force-with-lease
+  p = push
+  d = diff
+  st = status
+  rb = rebase 
+  rbi = rebase -i
+  rbc = rebase --continue
+  rba = rebase --abort
+  rbs = rebase --skip
+  rs = reset --soft
+  rh = reset --hard
+  rl = reflog --relative-date
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  wc = whatchanged --name-only --pretty="" origin..HEAD
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+[merge]
+  ff = only
+	tool = code
+[commit]
+  template = ~/.gitmessage
+[fetch]
+  prune = true
+[rebase]
+  autosquash = true
+[include]
+  path = ~/.gitconfig.local
+[user]
+	email = andy.fang@shopify.com
+	name = Andy Fang
