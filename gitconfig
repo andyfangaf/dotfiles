@@ -5,31 +5,40 @@
 [color]
 	ui = auto
 [alias]
-  aa = add --all
-  a = add 
-  ap = add --patch
-  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
-  ci = commit -v
-  cm = commit -m
-  cam = commit --amend
-  co = checkout
-  fp = push --force-with-lease
-  p = push
-  d = diff
-  st = status
-  rb = rebase 
-  rbi = rebase -i
-  rbc = rebase --continue
-  rba = rebase --abort
-  rbs = rebase --skip
-  rs = reset --soft
-  rh = reset --hard
-  rl = reflog --relative-date
-  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  wc = whatchanged --name-only --pretty="" origin..HEAD
+    aa = add --all
+    a = add 
+    ap = add --patch
+    branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+    ci = commit -v
+    cm = commit -m
+    cam = commit --amend --no-edit
+    co = checkout
+    fp = push --force-with-lease
+    p = push
+    d = diff --color
+    st = status
+    rb = rebase 
+    rbi = rebase -i
+    rbc = rebase --continue
+    rba = rebase --abort
+    rbs = rebase --skip
+    r = reset
+    rs = reset --soft
+    rh = reset --hard
+    rl = reflog --relative-date
+    rmc = rm --cached
+    l = log
+    mb = branch -m
+    wc = whatchanged --name-only --pretty="" origin..HEAD
+    f = fetch
+    ut = update-index --assume-unchanged
+    t = update-index --no-assume-unchanged
+    ua = git rm --cached *
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
+	editor = /usr/bin/vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [merge]
   ff = only
 	tool = code
